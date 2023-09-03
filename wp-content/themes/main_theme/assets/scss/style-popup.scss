@@ -1,0 +1,110 @@
+.mfp-content {
+  width: unset !important;
+  .popup__sent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    width: 350px;
+    height: 275px;
+    background-color: $white;
+    border-radius: 10px;
+    .mfp-close {
+      width: unset;
+      height: unset;
+      padding: unset;
+      opacity: unset;
+      font-size: unset;
+      line-height: unset;
+    }
+    .sent__closed {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      cursor: pointer;
+      svg {
+        path {
+          opacity: 1;
+        }
+      }
+      @include hover {
+        svg {
+          path {
+            opacity: 0.65;
+          }
+        }
+      }
+    }
+    .sent__info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .info__title {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 120%;
+      }
+    }
+  }
+  .popup__failed {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    width: 350px;
+    height: 275px;
+    background-color: $white;
+    border-radius: 10px;
+    .mfp-close {
+      width: unset;
+      height: unset;
+      padding: unset;
+      opacity: unset;
+      font-size: unset;
+      line-height: unset;
+    }
+    .failed__closed {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      cursor: pointer;
+      svg {
+        path {
+          opacity: 1;
+        }
+      }
+      @include hover {
+        svg {
+          path {
+            opacity: 0.65;
+          }
+        }
+      }
+    }
+    .failed__info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .info__title {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 120%;
+      }
+      .info__description {
+        margin-top: 10px;
+        line-height: 140%;
+      }
+    }
+  }
+  @include horizontal-mobile {
+    .popup__sent, .popup__failed {
+      width: 320px;
+    }
+  }
+}

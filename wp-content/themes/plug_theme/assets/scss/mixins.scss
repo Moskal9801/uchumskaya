@@ -1,0 +1,31 @@
+@mixin mobile {
+	@media (max-width: 767px) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media (min-width: 768px) {
+		@content;
+	}
+}
+
+@mixin laptop {
+	@media (max-width: 1440px) {
+		@content;
+	}
+}
+
+@mixin small-laptop {
+	@media (max-width: 1200px) {
+		@content;
+	}
+}
+
+@mixin hover {
+	@media (min-width: 768px) {
+		&:hover {
+			@content;
+		}
+	}
+}

@@ -1,0 +1,369 @@
+$raleway: 'Raleway', sans-serif;
+
+$black: #1B1B1B;
+$light-green: #54C342;
+$green: #0A4C36;
+$dark-green: #182D28;
+$gray: #D9D9D9;
+$beige: #F1F1F1;
+$white: #FFFFFF;
+$red: #F06060;
+
+@import "reset";
+@import "fonts";
+@import "mixins";
+@import "hamburger";
+@import "magnific-popup";
+@import "sal";
+@import "swiper-bundle";
+
+@import "style-header";
+@import "style-footer";
+@import "style-home";
+@import "style-about";
+@import "style-products";
+@import "style-providers";
+@import "style-services";
+@import "style-vacancy";
+@import "style-news";
+@import "style-contacts";
+@import "style-default";
+@import "style-single";
+@import "style-404";
+@import "style-popup";
+
+.container {
+  max-width: 1230px;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.container-default {
+  max-width: 750px;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.all-page__feedback {
+  background-color: $green;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  @include small-tablet {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+
+.popup__feedback {
+  background-color: $green;
+  border-radius: 10px;
+  width: 1135px;
+  padding: 65px 65px 40px 40px;
+  @include small-laptop {
+    width: 935px;
+  }
+  @include tablet {
+    width: unset;
+  }
+  @include small-tablet {
+    padding: 60px 15px 60px 15px;
+  }
+}
+
+.feedback__container {
+  .mfp-close {
+    width: unset;
+    height: unset;
+    padding: unset;
+    opacity: unset;
+    font-size: unset;
+    line-height: unset;
+  }
+  .container__close {
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    cursor: pointer;
+    svg {
+      path {
+        opacity: 1;
+      }
+    }
+    @include hover {
+      svg {
+        path {
+          opacity: 0.65;
+        }
+      }
+    }
+  }
+  .container__title {
+    .title__title {
+      font-size: 36px;
+      font-weight: 700;
+      color: $light-green;
+    }
+    .title__description {
+      margin-top: 20px;
+      color: $white;
+    }
+  }
+  .container__content {
+    margin-top: 40px;
+    form {
+      .reverse__field {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        .filed__personal-info {
+          .personal-info__name, .personal-info__phone, .personal-info__mail {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            &:first-child {
+              margin-top: unset;
+            }
+            .name__legend, .phone__legend, .mail__legend {
+              font-size: 14px;
+              color: $white;
+            }
+            span {
+              input {
+                padding: 15px 0;
+                width: 100%;
+                color: $white;
+                background-color: unset;
+                border-top: unset;
+                border-left: unset;
+                border-right: unset;
+                border-bottom: 1px solid $white;
+                &:focus {
+                  border-bottom: 1px solid $light-green;
+                }
+                &::placeholder {
+                  color: $white;
+                  opacity: 0.5;
+                }
+                &.wpcf7-not-valid {
+                  &::placeholder {
+                    color: $red !important;
+                    opacity: 1;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .filed__message {
+          .message__legend {
+            font-size: 14px;
+            color: $white;
+          }
+          p {
+            margin-top: 10px;
+            span {
+              display: block;
+              height: 220px;
+              textarea {
+                resize: none;
+                padding: 10px;
+                width: 100%;
+                height: 100%;
+                color: $white;
+                background-color: unset;
+                border: 1px solid $white;
+                border-radius: 10px;
+                &:focus {
+                  border: 1px solid $light-green;
+                }
+                &::placeholder {
+                  color: $white;
+                  opacity: 0.5;
+                }
+              }
+            }
+          }
+        }
+      }
+      .reverse__accept {
+        .accept__accept {
+          margin-top: 40px;
+          .wpcf7-list-item {
+            margin: unset;
+            pointer-events: none;
+            label {
+              input {
+                display: none;
+              }
+              span {
+                font-size: 14px;
+                color: $white;
+                a {
+                  pointer-events: auto;
+                  font-size: 14px;
+                  color: $light-green;
+                  opacity: 1;
+                  @include hover {
+                    opacity: 0.65;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .accept__button {
+          margin-top: 40px;
+          span {
+            display: none;
+          }
+          input {
+            padding: 15px 45px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 500;
+            color: $white;
+            background-color: $light-green;
+            border: 1px solid $light-green;
+            border-radius: 28px;
+            @include hover {
+              color: $light-green;
+              background-color: rgba(0,0,0,0);
+            }
+          }
+        }
+      }
+      .wpcf7-response-output {
+        display: none;
+      }
+    }
+  }
+  @include small-tablet {
+    .container__close {
+      right: 20px;
+      top: 20px;
+    }
+    .container__title {
+      .title__title {
+        font-size: 30px;
+      }
+      .title__description {
+        margin-top: 10px;
+        font-size: 14px;
+        line-height: 140%;
+      }
+    }
+    .container__content {
+      margin-top: 30px;
+      form {
+        .reverse__field {
+          grid-template-columns: 1fr;
+          gap: 20px;
+          .filed__personal-info {
+            .personal-info__name, .personal-info__phone, .personal-info__mail {
+              span {
+                input {
+                  padding: 10px 0;
+                }
+              }
+            }
+          }
+          .filed__message {
+            p {
+              margin-top: unset;
+              span {
+                height: 43px;
+                textarea {
+                  padding: 10px 0;
+                  border-top: unset;
+                  border-left: unset;
+                  border-right: unset;
+                  border-radius: unset;
+                }
+              }
+            }
+          }
+        }
+        .reverse__accept {
+          .accept__accept {
+            .wpcf7-list-item {
+              label {
+                span {
+                  font-size: 12px;
+                  a {
+                    font-size: 12px;
+                  }
+                }
+              }
+            }
+          }
+          .accept__button {
+            input {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+html {
+  background-color: white;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  &.no-scroll {
+    overflow: hidden;
+  }
+  * {
+    font-family: $raleway;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: $black;
+    font-feature-settings: "lnum";
+    transition: all 0.4s ease-in-out;
+  }
+  a {
+    text-decoration: unset;
+  }
+  body::-webkit-scrollbar {
+    width: 15px;
+  }
+  body::-webkit-scrollbar-track {
+    background: $white;
+  }
+  body::-webkit-scrollbar-thumb {
+    background-color: $green;
+    border-radius: 7px;
+    border: 3px solid $white;
+  }
+  body {
+    -webkit-text-size-adjust: 100%;
+    scrollbar-width: thin;
+    scrollbar-color: $green $white;
+    overflow: hidden;
+  }
+  .default-button {
+    padding: 15px 45px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100%;
+    color: $white;
+    background-color: $light-green;
+    border: 1px solid $light-green;
+    border-radius: 28px;
+    @include hover {
+      color: $light-green;
+      background-color: rgba(0,0,0,0);
+    }
+  }
+}
+

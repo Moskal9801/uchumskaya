@@ -1,0 +1,21 @@
+$raleway: 'Raleway', sans-serif;
+
+$green: #54C342;
+
+@import "reset";
+@import "fonts";
+@import "mixins";
+@import "magnific-popup";
+
+@import "style-home";
+
+.container {
+  max-width: 730px;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+* {
+  transition: all 0.3s ease-in-out;
+}
